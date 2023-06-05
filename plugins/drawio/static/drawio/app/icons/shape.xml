@@ -1,0 +1,29 @@
+<shapes name="mxGraph.kod">
+	<shape name="brace Group Line" h="100" w="100" aspect="variable" strokewidth="inherit">
+	<connections>
+		<constraint x="0.5" y="0" perimeter="0" name="N"/>
+		<constraint x="0.5" y="1" perimeter="0" name="S"/>
+		<constraint x="0" y="0.5" perimeter="0" name="W"/>
+		<constraint x="1" y="0.5" perimeter="0" name="E"/>
+		<constraint x="0" y="0" perimeter="0" name="NW"/>
+		<constraint x="0" y="1" perimeter="0" name="SW"/>
+		<constraint x="1" y="0" perimeter="0" name="NE"/>
+		<constraint x="1" y="1" perimeter="0" name="SE"/>
+	</connections>
+	<background>
+		<path>
+		<move x="10" y="0"/>
+		<line x="0" y="10"/>
+		<line x="0" y="90"/>
+		<line x="10" y="100"/>
+
+		<move x="90" y="0"/>
+		<line x="100" y="10"/>
+		<line x="100" y="90"/>
+		<line x="90" y="100"/>
+		</path>
+	</background>
+	<foreground><stroke/></foreground>
+</shape>
+
+</shapes>

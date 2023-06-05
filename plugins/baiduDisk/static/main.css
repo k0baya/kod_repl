@@ -1,0 +1,11 @@
+.path-ico.name-io-baidu .x-io-baidu{background-image:url('./images/icon.jpeg');}
+.artDialog.app-config-baiduDisk{width: 560px!important;}
+.artDialog.app-config-baiduDisk .aui-main{height: 320px!important;}
+
+/* 存储编辑页 */
+.form-select2-dropdown-key-storeType .select2-results__options .select2-results__option .path-ico.name-kod-baidu img{
+    width: 42px;height: 42px;vertical-align: top;
+}
+.admin-page .storage-page .store-type-box .form-row.item-storeType .path-ico.name-kod-baidu img{
+    width: 16px;height: 16px;vertical-align: top;
+}

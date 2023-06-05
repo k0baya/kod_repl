@@ -1,0 +1,98 @@
+{
+	"id":"drawio",
+	"name":"{{LNG['drawio.meta.name']}}",
+	"title":"{{LNG['drawio.meta.title']}}",
+	"menu":"{{LNG['drawio.menu']}}",
+	"version":"1.11",
+	"source":{
+		"icon":"{{pluginHost}}static/images/icon.png",
+		"screenshoot":[
+			"{{pluginHost}}static/images/desc1.png",
+			"{{pluginHost}}static/images/desc2.png",
+			"{{pluginHost}}static/images/desc3.png"
+		]
+	},
+	"category":"tools,file",
+	"description":"{{LNG['drawio.meta.desc']}}",
+	"keywords":"drawio,流程图",
+	"auther":{
+		"copyright":"draw.io",
+		"homePage":"http://draw.io",
+	},
+	"configItem":{
+		"formStyle":{
+			"className":"form-box-title-left",
+			"tabs":{
+				"{{LNG['admin.setting.base']}}":"sep001,pluginAuth,openWith,sep1001,menuAdd,menuSubMenu,sep1002,fileSort,fileExt"
+			}
+		},
+		"pluginAuth":{
+			"type":"userSelect",
+			"value":{"all":1},
+			"display":"{{LNG['admin.plugin.auth']}}",
+			"desc":"{{LNG['admin.plugin.authDesc']}}",
+			"require":1
+		},
+		"openWith":{
+			"type":"segment",
+			"value":"inline",
+			"display":"{{LNG['admin.plugin.openWith']}}",
+			"info":{
+				"inline":"<i class='font-icon ri-layout-left-line-2'></i>{{LNG['explorer.app.openInline']}}",
+				"dialog":"<i class='font-icon ri-picture-in-picture-fill'></i>{{LNG['explorer.app.openDialog']}}",
+				"_blank":"<i class='font-icon ri-external-link-fill'></i>{{LNG['explorer.app.openWindow']}}"
+			}
+		},
+		"sep1001":"<hr/>",
+		"menuAdd":{
+			"type":"switch",
+			"value":1,
+			"display":"{{LNG['admin.plugin.menuAdd']}}",
+			"desc":"{{LNG['admin.plugin.menuAddDesc']}}",
+			"switchItem":{"0":"","1":"menuSubMenu"}
+		},
+		"menuSubMenu":{
+			"type":"switch",
+			"value":0,
+			"display":"{{LNG['admin.setting.subMenu']}}",
+			"desc":"{{LNG['admin.plugin.menuSubMenuDesc']}}"
+		},
+		"sep1002":"<hr/>",
+		"fileExt":{
+			"type":"tags",
+			"display":"{{LNG['admin.plugin.fileExt']}}",
+			"desc":"{{LNG['admin.plugin.fileExtDesc']}}",
+			"value":"drawio,vsd,vsdx,vdx,graphml,pos,dio"
+		},
+		"fileSort":{
+			"type":"number",
+			"display":"{{LNG['admin.plugin.fileSort']}}",
+			"desc":"{{LNG['admin.plugin.fileSortDesc']}}",
+			"value":100
+		},
+		
+		"sep1003":"<h4>{{LNG['drawio.config.settingMore']}}</h4>",		
+		"iconSearch":{
+			"type":"segment",
+			"display":"{{LNG['drawio.config.iconSearch']}}",
+			"info":{
+				"alifont"  :"Ali icon",
+				"iconsapi" :"icons Api"
+			},
+			"desc":"<div>{{LNG['drawio.config.iconSearch.desc']}}</div>",
+			"switchItem":{"iconsapi":"staticSearchProxy"},
+			"value":"alifont"
+		},
+		"staticSearchProxy":{
+			"type":"segment",
+			"display":"{{LNG['drawio.config.staticSearchProxy']}}",
+			"value":"no",
+			"info":{
+				"no"   :"{{LNG['drawio.config.staticSearchProxy.no']}}",
+				"yes"  :"{{LNG['drawio.config.staticSearchProxy.yes']}}"				
+			}
+		}
+	}
+}
+
+

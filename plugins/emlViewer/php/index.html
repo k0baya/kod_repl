@@ -1,0 +1,95 @@
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<?php $this->link();?>
+		<?php $this->link('static/app/style.css');?>
+        <script>
+        var DEFAULT_FILE_URL = "<?php echo clear_quote($fileUrl);?>";
+        var DEFAULT_FILE_NAME = "<?php echo clear_quote($fileName);?>";
+        </script>
+        <style type="text/css" media="all">
+        .loading {
+            position: absolute;
+            top:46%;
+            left:47%;
+            width:70px;
+            height:60px;
+            line-height:56px;
+            color:#fff;
+            font-size:15px;
+            background: url("<?php echo STATIC_PATH;?>images/common/dialog/dialog_loading-.gif") no-repeat 10px 50%;
+            opacity: 0.7;
+            z-index:9999;
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div id="header" style="height: auto; overflow: hidden;">
+            <div class="subject-box"> <span id="subject"></span>
+
+                <a id="attachicon" href="#attachbox" class="flt-rt a_css"></a>
+            </div>
+            <div id="headsimple" class="head-simple" style="display:none;"> <span><span id="headfrom" class="font-bold"></span><span class="send-to">&nbsp;<?php echo LNG('emlViewer.header.sendto'); ?>&nbsp;</span><span id="headto" class="font-bold"></span></span> <span class="flt-rt"><span id="headdate" class="font-7f"></span>&nbsp;&nbsp;
+                <a
+                id="moredtl" href="javascript:void(0)" class="a_css" onclick="proc_more('<?php echo LNG('emlViewer.header.more'); ?>','<?php echo LNG('emlViewer.header.hidden'); ?>')">
+                    <?php echo LNG( 'emlViewer.header.more'); ?>
+                    </a>
+                    </span>
+            </div>
+            <div id="headdtl" class="head-dtl" style="display:none">
+                <div class="dis-box">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.from'); ?>
+                    </div>
+                    <div id="from"></div>
+                </div>
+                <div class="dis-box">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.to'); ?>
+                    </div>
+                    <div id="to"></div>
+                </div>
+                <div class="dis-box">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.cc'); ?>
+                    </div>
+                    <div id="cc"></div>
+                </div>
+                <div class="dis-box">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.date'); ?>
+                    </div>
+                    <div id="date">2018-07-01</div>
+                </div>
+                <div id="attachcntbox" class="dis-box" style="display:none;">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.attach'); ?>
+                    </div>
+                    <div id="attachcnt"></div>
+                </div>
+                <div id="attachsizebox" class="dis-box" style="display:none;">
+                    <div>
+                        <?php echo LNG( 'emlViewer.header.size'); ?>
+                    </div>
+                    <div id="attachsize"></div>
+                </div>
+            </div>
+        </div>
+        <div id="relust" class="result"></div>
+        <div id="attachbox" class="method-1-wrap wrap" style="display:none;"> <span id="footattachcnt" class="title"><?php echo LNG( 'emlViewer.header.attach2'); ?></span>
+
+            <div class="content" id="attach"></div>
+        </div>
+		<div class="loading" id="waitting"></div>
+		
+		<?php $this->link('app/vender-lib/purify.min.js','static');?>
+		<?php $this->link('static/lib/addmore.js');?>
+		<?php $this->link('static/lib/bundle.js');?>
+		<?php $this->link('static/lib/emlwork.js');?>
+    </body>
+
+</html>

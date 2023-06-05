@@ -1,0 +1,25 @@
+{
+	"id":"flashPlayer",
+	"name":"Flash Player",
+	"title":"Flash Player",
+	"version":"1.0",
+	"category":"media,file",
+	"description":"Flash Player support after chrome 80",
+	"keywords":"Flash Player",
+	"source":{
+		"className":"x-item-icon x-swf",
+	},
+	"auther":{
+		"copyright":"kodcloud.",
+		"homePage":"http://www.kodcloud.com",
+	},
+	"configItem":{
+		"pluginAuth":{
+			"type":"userSelect",
+			"value":{"all":1},
+			"display":"{{LNG['admin.plugin.auth']}}",
+			"desc":"{{LNG['admin.plugin.authDesc']}}",
+			"require":1
+		}
+	}
+}

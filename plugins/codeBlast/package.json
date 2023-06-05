@@ -1,0 +1,45 @@
+{
+	"id":"codeBlast",
+	"name":"codeBlast",
+	"title":"代码激情",
+	"version":"1.2",
+	"category":"others",
+	"description":"codeBlast 代码激情<br/> <h3><a href='http://kushagragour.in/code-blast-codemirror/demo/index.html' target='_blank'>try(体验一下)</a></h3>",
+	"keywords":"",
+	"auther":{
+		"copyright":"kodcloud.",
+		"homePage":"http://www.kodcloud.com",
+	},
+	"configItem":{
+		"formStyle":{"className":"form-box-title-right"},
+		"pluginAuth":{
+			"type":"userSelect",
+			"value":{"all":1},
+			"display":"{{LNG['admin.plugin.auth']}}",
+			"desc":"{{LNG['admin.plugin.authDesc']}}"
+		},
+		"step001":"<h5>编辑器激情模式: <a href='http://kushagragour.in/code-blast-codemirror/demo/index.html' target='_blank'>try(体验一下)</a></h5>",
+		"open":{
+			"type":"switch",
+			"value":"0",
+			"display":"Switch",
+			"desc":"是否开启"
+		},
+		"shakeTimes":{
+			"type":"number",
+			"value":"2",
+			"display":"Shake Times",
+			"desc":"屏幕震动幅度",
+			"info":{"from":0,"to":20,"step":1}
+		},
+		"style":{
+			"type":"radio",
+			"value":"2",
+			"display":"Style",
+			"info":{
+				"1":"方块(Blocks)",
+				"2":"圆圈(Circles)"
+			}
+		}
+	}
+}

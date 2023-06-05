@@ -1,0 +1,751 @@
+
+body{
+	font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", 
+	微软雅黑, "Lantinghei SC", STXihei, "WenQuanYi Micro Hei", Arial, sans-serif !important;
+}
+html body td.mxPopupMenuItem {
+	font-family: inherit;
+    padding:5px 10px 5px 25px;
+    font-size: inherit;
+}
+a,button{cursor: pointer;}
+.geDiagramBackdrop{
+	background:#d3d3d8 url('./images/bg.jpg') repeat;
+	margin-left: -7px;
+}
+.mxWindowPane .geDiagramContainer{border:none;}
+.mxWindow .mxWindowPane .geDiagramContainer.geDiagramBackdrop{margin:0;border:none !important;}
+
+
+/** 下拉菜单*/
+.geEditor div.mxPopupMenu{
+    padding: 5px 0;margin-top: -2px;
+    font-size: 13px;color: #444;
+    cursor: pointer;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+}
+html .geEditor table.mxPopupMenu td.mxPopupMenuItem{font-size:12px;}
+.geEditor div.mxPopupMenu hr{
+	height: 2px;line-height: 0;
+    border-bottom: 1px solid #eee;
+    margin: 2px 0 4px;
+    background: none;
+}
+html tr.mxPopupMenuItemHover,
+html tr.mxPopupMenuItem.menu-add:hover{
+    background-color: #e6f7ff;
+    color: #1890ff;
+}
+
+
+/** 工具栏 **/
+.geBackgroundPage {
+    box-shadow: 2px 2px 8px #00000059;
+}
+.geToolbar{border:none;}
+.geTabContainer {
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+    background-color: #f1f3f4;
+	margin-left: -10px;
+	z-index: 10;
+}
+.geToolbarContainer {
+	border-top: 1px solid #cbcccc;
+    box-shadow: inset 0 1px 0 0 #fff;
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -ms-linear-gradient(top,#f5f5f5,#eee);
+    background-image: -o-linear-gradient(top,#f5f5f5,#eee);
+    background-image: linear-gradient(top,#f5f5f5,#eee);
+	border-bottom: 1px solid #ccc;
+	height: 37px !important;
+}
+
+/* 对话框 */
+.geDialog{
+	animation-duration: 0.2s;-webkit-animation-duration: 0.2s;
+	-webkit-animation-fill-mode: none;
+    animation-name: scaleOpen;-webkit-animation-name: scaleOpen;
+}
+.geDialog .geDialogTitle{
+	background: #fafafa;color:#444;
+    border-color: #eee;
+}
+.geDialog .geDialogFooter{background: #fafafa;border-color: #eee;}
+.geDialogClose{
+	width:10px;height:10px;padding: 15px;
+	margin-top: -14px;margin-left: -18px;
+}
+.geDialogClose:hover{background-color:rgba(0, 0, 0, 0.05);}
+.geEditor .pcr-app{z-index: 990000;}
+.geEditor .pcr-app .pcr-swatches button{border:none !important;border-radius: 0;}
+
+
+/* input */
+.geEditor input{border-width: 1px;}
+.geEditor textarea,
+.geEditor select,
+.geEditor input:not([type="checkbox"]):not([type="radio"]):not([type="button"]){
+    border: 1px solid #ccc;
+    border-radius: 3px;outline: none;
+}
+.geEditor select{
+	background: #f3f3f3;padding: 3px 3px;
+	background-image: linear-gradient(#fff 0px,#f3f3f3 100%);
+}
+.geEditor select:hover{
+	background-image: linear-gradient(#f3f3f3 0px,#e6e6e6 100%);
+    border-color: #bbb;
+}
+.geEditor .geDialog > div > input[type="text"],
+.geEditor .geDialog table.properties + div > input,
+.geEditor .geDialog img[align="absmiddle"] + input,
+.geEditor .geDialog table tr td input{padding:4px 0.4em;}
+
+.geEditor textarea:focus,
+.geEditor select:focus,
+.geEditor input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):focus{
+	outline: none;border-color: #75A1F0;	
+    box-shadow: 0 0 0 3px rgba(117, 161, 240, 0.3);
+}
+.geEditor input[type="checkbox"]{position: relative;top: 2px;}
+.geEditor input[type="radio"]{position: relative;top: 2px;}
+.geEditor button:not(.geSprite){
+	background: #f3f3f3;border-radius: 3px;
+	background-image: linear-gradient(#fff 0px,#f3f3f3 100%);
+    outline: none;border:1px solid #ddd;
+	transition: all 0.3s;
+}
+.geEditor button:not(.geSprite):hover{
+	background: #e4f8ff;
+    border-color: #aedaff;
+	
+	background-image: linear-gradient(#f3f3f3 0px,#e6e6e6 100%);
+    border-color: #bbb;
+}
+.geEditor button.geBigButton,
+.geEditor button.gePrimaryBtn{
+	border: 1px solid #3079ed;
+	background-image: linear-gradient(#4d90fe 0px,#4787ed 100%);
+}
+.geEditor button.geBigButton:hover,
+.geEditor button.gePrimaryBtn:hover{
+	background-color: #4d90fe;
+    background-image: linear-gradient(#4d90fe 0px,#4787ed 100%);
+}
+.geEditor button.geBigButton:hover,
+.geEditor button.gePrimaryBtn:hover{opacity:0.8;}
+
+.geSidebarContainer button.geColorBtn div{border-color:#444 !important;}
+.geSidebarContainer .geDropTarget {
+    border-radius: 4px;
+    border: 1px dotted #aaa;
+    padding: 10px;margin: 5px;
+}
+
+/* .geSidebarContainer .geFormatSection button{padding:4px 0;} */
+.geToolbarContainer .geButton:hover,
+.geToolbarContainer .geLabel:hover{background-color: rgba(0,0,0,0.08);}
+
+.geToolbarContainer .geButton.mxDisabled,
+.geToolbarContainer .geLabel.mxDisabled{cursor: not-allowed !important;}
+.geToolbarContainer .geButton.mxDisabled:hover,
+.geToolbarContainer .geLabel.mxDisabled:hover{background-color: transparent;}
+.geEditor .geNotification-box + button.gePrimaryBtn{display: none}
+.geEditor .geNotification-box{display: none}
+.geEditor .geNotification-box + .geToolbarButton{display: none}
+
+.geEditor input.form-step-input{
+	border-radius: 3px 0 0 3px !important;height: 14px !important;
+	padding:3px 2px 2px 2px;margin-right: -1px;
+}
+.geEditor .form-step-btn{border-radius: 0 3px 3px 0 !important;margin-right: -2px;}
+.geEditor .form-step-btn div{opacity:0.4;height:9px !important;width: 12px !important;}
+.geEditor .form-step-btn div:hover{opacity:1}
+
+.geEditor .mxPopupMenu.geMenubarMenu tr[item="exportAs"] + tr{display: none}
+
+
+.geEditor .geMenubarContainer .geMenubar .geItem.geStatus{display: none;}
+.geEditor .mxPopupMenuItem[item="autosave"]{display: none;}
+.geEditor .geNotification-box{right:-49px;}
+
+.geEditor .hidden{display: none !important;}
+.geEditor .draw-file-save{
+    padding:4px 4px 0 4px; margin:3px 4px 0 4px;
+    float: left;border-radius: 2px;
+    cursor: pointer;position: relative;color: #666;
+}
+.geEditor .draw-file-save span{display: none;}
+.geEditor .draw-file-save::before{
+	content: "\f0b0";
+    font-family: 'remixicon';
+    font-size: 24px;
+    position: relative;top: -1px;
+}
+
+.geEditor .draw-file-save:after{
+	position: absolute;content:"";
+	width:1px;height:70%;margin-left: 6px;
+	background: #ddd;
+}
+.geEditor .draw-file-save:hover{background:rgba(0, 0, 0, 0.1);}
+.geEditor .draw-file-save.disabled{opacity:0.2;cursor:not-allowed;}
+.geEditor .draw-file-save.disabled:hover{background:none;}
+
+.geEditor .file-info{
+	position: absolute;left: 35%;top: 0;
+    color: #aaa;text-align: center;
+	background: #fbfbfb;
+    width: 30%;height: 30px;line-height: 30px;
+}
+.geEditor .mxPopupMenu.geMenubarMenu{
+    margin-left: -1px;margin-top: -1px;
+    box-shadow: 8px 7px 10px rgba(0,0,0,0.2);
+}
+
+.geEditor .geMenubarContainer .geMenubar .geItem.getStats{display: none;}
+.geEditor .geMenubarContainer .geMenubar .geItem:hover,
+.geEditor .geMenubarContainer .geMenubar .geItem.this{
+    background: rgba(0,0,0,.1);border-radius: 0;
+    box-shadow: 0px 0px 0 1px rgba(0,0,0,0.15);
+}
+.geEditor .geMenubarMenu.menu-content-help tbody > .mxPopupMenuItem:first-child{display: none}
+.geEditor .geDiagramContainer .geToolbarContainer.geSidebarContainer.geSidebar{
+	height: 165px !important;
+    border-radius: 2px !important;
+    box-shadow: 4px 4px 20px #ddd !important;
+    border: 1px solid #ccc;
+}
+
+/* .geEditor .geSidebarContainer > div > .geSidebar{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.geEditor .geSidebarContainer > div > .geSidebar:after{
+	content: '';width:36px;border:1px solid transparent;
+} */
+.geSidebarContainer .geDropTarget{width:100%;}
+
+td.mxWindowTitle {
+	background-image: -webkit-linear-gradient(top,#f3f3f3,#b9b9b9);
+	background-image: linear-gradient(top,#f3f3f3,#b9b9b9);
+}
+
+.geSidebarContainer{
+	border-right: 1px solid #ccc;
+    background: #fdfdfd;
+    z-index: 10;
+}
+.geFormatSection{border-color: #ddd;}
+.geMenubarContainer .geItem:active {background: #ddd;}
+.geSidebarContainer.geFormatContainer{
+	border-left: 1px solid #ccc;
+	border-right:none;
+	padding-right:0;
+}
+.geSidebarContainer.geFormatContainer .geFormatSection{cursor:pointer;}
+.geSidebarContainer.geSidebarFooter{
+	border-top: 1px solid #ccc;text-align:center;
+	z-index: 20;
+}
+.geSidebarContainer.geSidebarFooter .geTitle{
+    color: #fff !important;
+    background: #1890ff;
+    display: inline-block;
+    padding: 3px 20px 6px 20px !important;
+    height: 20px !important;
+    border: none;
+    border-radius: 3px;
+    margin-top: 4px;
+}
+.geSidebarContainer.geSidebarFooter .geTitle:hover{
+	background: #2781d4 !important;
+}
+body.draw-view-only .geDiagramContainer > svg{padding: 3% 0 6% 0;}
+
+.preview-toolbar{border-radius: 5px !important;padding: 0 5px !important;}
+.preview-toolbar .toolbar-item{cursor:pointer;display:inline-block;padding:6px 15px;}
+.preview-toolbar .toolbar-item:hover{background:rgba(255,255,255, 0.2);}
+.page-num {position: relative;top: 6px;}
+
+.geHsplit {
+    border: none;
+    margin-left: -5px;
+    background-color: transparent;
+    background-position-x: -1px;
+    width: 10px !important;
+    z-index: 100;
+}
+.geHsplit:hover, .geVsplit:hover {
+    background-color: #1890ff2e;
+}
+.geActivePage {
+    color: #1890ff !important;
+    border-bottom: 2px solid #1890ff !important;
+}
+
+
+/** 图形 **/
+.geSidebar{
+	box-shadow: 0px 4px 4px #0000000a inset;
+}
+.geSidebar .geItem {border-radius:0px;cursor: move;}
+.geSidebar .geItem:hover {
+    background-color: #e6f7ff;
+    box-shadow: 0 0 0 1px #1890ff;
+}
+.geSidebarContainer .geTitle{cursor:pointer !important;}
+.geSidebarContainer .geTitle:active {
+    background-color: #e6e6e6;
+}
+
+
+/*对话框*/
+.geDialog{
+    border-radius:4px; 
+    border: none;
+    box-shadow: 0 0 0 1px #00000012, 2px 6px 30px rgba(0,0,0,0.2);
+}
+
+.mxCellEditor.geContentEditable{margin-left: 0;margin-top: -1px;}
+
+
+/*页面css*/
+body { overflow:hidden; }
+div.picker { z-index: 10007; }
+.geSidebarContainer .geTitle input {
+	font-size:8pt;
+	color:#606060;
+}
+.geBlock {
+	z-index:-3;
+	margin:100px;
+	margin-top:40px;
+	margin-bottom:30px;
+	padding:20px;
+}
+.geBlock h1, .geBlock h2 {
+	margin-top:0px;
+	padding-top:0px;
+}
+.geEditor ::-webkit-scrollbar {
+	width:14px;
+	height:14px;
+}
+.geEditor ::-webkit-scrollbar-track {
+	background-clip:padding-box;
+	border:solid transparent;
+	border-width:1px;
+}
+.geEditor ::-webkit-scrollbar-corner {
+	background-color:transparent;
+}
+.geEditor ::-webkit-scrollbar-thumb {
+	background-color:rgba(0,0,0,.1);
+	background-clip:padding-box;
+	border:solid transparent;
+	border-radius:10px;
+}
+.geEditor ::-webkit-scrollbar-thumb:hover{
+	background-color:rgba(0,0,0,.4);
+}
+.geTemplate {
+	border:1px solid transparent;
+	display:inline-block;
+	_display:inline;
+	vertical-align:top;
+	border-radius:3px;
+	overflow:hidden;
+	font-size:14pt;
+	cursor:pointer;
+	margin:5px;
+}
+.geFooterContainer div.geSocialFooter a {
+	display:inline;
+	padding:0px;
+}
+.geFooterContainer div.geSocialFooter a img {
+	margin-top:10px;
+	opacity:0.5;
+}
+.geFooterContainer div.geSocialFooter a img:hover {
+	opacity:1;
+}
+.geFooterContainer>div#geFooter>img {
+	opacity:0.5;
+	border:1px solid transparent;
+	cursor:pointer;
+	margin-top:3px;
+	margin-right:6px;
+	position:absolute;
+	right:4px;
+	top:12px;
+	padding:1px;
+	cursor:pointer;
+}
+
+.geItem.menu-language{display: none !important;}
+.geToolbarContainer a.geButton.toggle-fullscreen{right:30px !important;}
+.geToolbarContainer a.geButton.toggle-panel{right: 10px !important;}
+.geToolbarContainer a.geButton.toggle-header{display: none !important;}
+
+
+img{user-select: none;-webkit-user-drag: none;user-drag: none;}
+.geFooterContainer>div#geFooter>img:hover {opacity: 1;}
+
+.geMenubarContainer .mxPopupMenuItem[menu="help"]{display: none !important;}
+.geMenubarContainer .geItem[menu="help"]{display: none !important;}
+.mxPopupMenu.geToolbarMenu{width:inherit !important;}
+td.mxPopupMenuIcon .geIcon{
+	padding: 4px 10px !important;border:none;margin: 0;
+	width: 40px;background-position-x: 20px;
+}
+td.mxPopupMenuIcon .geIcon:hover{border:none;background-color:rgba(0, 0, 0, 0.1);border-radius:0;}
+
+/* 工具栏: 下拉菜单 */
+.mxPopupMenu tr.mxPopupMenuItem td.mxPopupMenuIcon table{margin: 5px;border-color: #bbb;}
+.mxPopupMenu tr.mxPopupMenuItem td.mxPopupMenuIcon table tbody td[style="background-color: blue;"] {
+    background-color: #e0f1ff !important;
+}
+
+.mxPopupMenu.geToolbarMenu.submenu-format table tr,
+.mxPopupMenu.geToolbarMenu.submenu-alignment table tr{display:inline-block;}
+
+.mxPopupMenu.geToolbarMenu.submenu-format table tr td.mxPopupMenuIcon .geIcon,
+.mxPopupMenu.geToolbarMenu.submenu-alignment table tr td.mxPopupMenuIcon .geIcon{
+	width: 30px;padding:0px 0px 7px !important;
+	background-position-x: 6px;
+}
+.geToolbarContainer .geButton {background: transparent;}
+
+.mxPopupMenu.geToolbarMenu.submenu-format table.mxPopupMenu{width:100px;margin-left: 6px;}
+.mxPopupMenu.geToolbarMenu.submenu-alignment table.mxPopupMenu{width:120px;margin-left: 6px;}
+.mxPopupMenu.geToolbarMenu.submenu-alignment table.mxPopupMenu{width:120px;margin-left: 6px;}
+
+html body .mxPopupMenu tr.mxPopupMenuItem{color:#444;}
+html body .mxPopupMenu td.mxPopupMenuItem{
+	padding:5px 25px 5px 35px;
+	position: relative;line-height: 14px;
+}
+html tr.mxPopupMenuItemHover td.mxPopupMenuItem[align="left"]:before{
+	color:#1890ff;
+	background-image:-webkit-linear-gradient(107deg, #81bdf5, #0873d8);
+}
+div.mxWindow{border-top: none !important;}
+.mxPopupMenu td.mxPopupMenuItem[align="left"] + .mxPopupMenuItem{padding: 5px 5px 5px 2px;font-size: 0.9em;}
+.mxPopupMenu td.mxPopupMenuItem[align="left"] + .mxPopupMenuItem span{
+	opacity: 0.4;
+	position: relative;top: 1px;
+	max-width:80px;display: inline-block;
+    overflow: hidden;text-overflow: ellipsis;
+}
+.mxPopupMenu td.mxPopupMenuItem[align="left"]:before{
+	position: absolute;top:4px;left:12px;
+    font-family: 'remixicon';
+    font-size: 18px;color: #aaa;
+    width: 18px;height: 18px;line-height: 1em;
+    display: inline-block;
+	
+	background-image:-webkit-linear-gradient(107deg, #bbb, #555);
+	text-fill-color: transparent;-webkit-text-fill-color: transparent;
+	background-clip: text;-webkit-background-clip: text;
+}
+.geDragPreview {border:1px dotted rgba(0,0,0,0.7);opacity: 0.7;box-sizing:border-box;}
+.geDragPreview svg{margin-left:-3px;margin-top: -3px;}
+
+
+.geEditor .geSidebarTooltip{
+	background:#fff !important;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+	border-radius: 4px !important;
+}
+.geEditor .geSidebarTooltip > div{
+	background: #fafafa  !important;
+	border-top: 1px solid #eee  !important;
+    bottom: 0  !important;padding: 8px 0  !important;
+	border-radius: 0 0 4px 4px;
+}
+
+.geDialog.dialog-App-EditorUi-showLinkDialog{width: 400px !important;margin-left: 80px;height: 140px !important;}
+.geDialog.dialog-App-EditorUi-showLinkDialog .geTitle{margin-top: 10px;}
+.geDialog.dialog-App-EditorUi-showLinkDialog input[type="text"]{
+	width: 375px !important;padding:6px;margin-bottom: 10px;
+	background-position: 99% 50% !important;
+}
+.geDialog.dialog-App-EditorUi-showLinkDialog input[type="checkbox"]{opacity: 0;margin-right: 100px;}
+.geDialog.dialog-App-EditorUi-showLinkDialog select{width: 375px !important;}
+.geDialog.dialog-App-EditorUi-showLinkDialog .geTitle + div{text-align: right !important;}
+.geDialog.dialog-App-EditorUi-showLinkDialog .geTitle + div .geBtn:nth-child(1){display: none;}
+.geDialog.dialog-Action-funct{padding: 30px 30px 50px 30px;}
+
+.geDialog.dialog-App-EditorUi-showLinkDialog + .geDialogClose{margin-left: -98px;}
+.geDialog .content-print div .geBtn:nth-child(2){display: none;}
+.geDialog > div{overflow:visible !important;}
+
+.geDialog textarea,
+.geDialog input:not([type="checkbox"]):not([type="radio"]):not([type="button"]){padding:5px;}
+.geDialog textarea{box-sizing: border-box;}
+.mxPopupMenu .mxPopupMenuItem[item="editData"]{display: none;}
+
+
+.search-icon-view{border-bottom: 1px solid #ddd;}
+.search-icon-view .search-icon-content input:focus{border-color: #75A1F0 !important;}
+.geSidebar.search-icon-content{border:none;}
+.search-web{
+    margin:-5px 0px 10px 5px;
+    border:1px solid #ddd;
+    border-radius: 4px;
+}
+.search-web .title{
+	background: #fafafa;
+    padding: 3px 7px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+}
+.search-web .list{padding:5px;border: none;}
+.search-web .list .tips{font-size: 12px;text-align: center;color:#aaa;padding: 8px;}
+.search-web .list-load-more{display: block;margin: 0 auto 10px auto;}
+.search-web .loading{position: relative;top: 0margin-left: 5px;}
+
+
+html body .mxPopupMenu.menu-content-fontFamily td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-formatBlock td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-fontSize td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-layout td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-importFrom td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-openLibraryFrom td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-insertLayout td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-insertAdvanced td.mxPopupMenuItem,
+html body .mxPopupMenu.menu-content-viewZoom td.mxPopupMenuItem{padding:5px 30px 5px 20px;}
+
+html body .mxPopupMenu.menu-content-fontFamily td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-formatBlock td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-fontSize td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-layout td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-importFrom td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-openLibraryFrom td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-insertLayout td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-insertAdvanced td.mxPopupMenuItem[align="left"]:before,
+html body .mxPopupMenu.menu-content-viewZoom td.mxPopupMenuItem[align="left"]:before{display: none;}
+
+html body .mxPopupMenu.menu-content-theme td.mxPopupMenuItem{padding:5px 40px 5px 35px;}
+.mxPopupMenu.menu-content-fontFamily tr[item="reset"]{display: none;}
+.mxPopupMenu.menu-content-fontFamily tr[item="reset"] + tr{display: none;}
+
+
+.mxPopupMenu tr[check="checked"] td.mxPopupMenuItem[align="left"]:before{content:"\eb7b";font-size: 20px;top:2px;}
+.mxPopupMenu tr[item="undo"] td.mxPopupMenuItem[align="left"]:before{content:"\ea58";}
+.mxPopupMenu tr[item="pasteHere"] td.mxPopupMenuItem[align="left"]:before{content:"\ecd3";}
+.mxPopupMenu tr[item="clearDefaultStyle"] td.mxPopupMenuItem[align="left"]:before{content:"\ec5c";}
+
+.mxPopupMenu tr[item="open"] td.mxPopupMenuItem[align="left"]:before{content:"\eceb";}
+.mxPopupMenu tr[item="selectVertices"] td.mxPopupMenuItem[align="left"]:before{content:"\f0ef";}
+.mxPopupMenu tr[item="selectEdges"] td.mxPopupMenuItem[align="left"]:before{content:"\f0f2";}
+.mxPopupMenu tr[item="selectAll"] td.mxPopupMenuItem[align="left"]:before{content:"\eb89";}
+.mxPopupMenu tr[item="selectDescendants"] td.mxPopupMenuItem[align="left"]:before{content:"\eb89";}
+.mxPopupMenu tr[item="selectConnections"] td.mxPopupMenuItem[align="left"]:before{content:"\ea6c";}
+.mxPopupMenu tr[item="selectNone"] td.mxPopupMenuItem[align="left"]:before{content:"\eb87";}
+
+.mxPopupMenu tr[item="delete"] td.mxPopupMenuItem[align="left"]:before{content:"\ec23";}
+.mxPopupMenu tr[item="copy"] td.mxPopupMenuItem[align="left"]:before{content:"\ecd3";}
+.mxPopupMenu tr[item="cut"] td.mxPopupMenuItem[align="left"]:before{content:"\f0bf";}
+.mxPopupMenu tr[item="copyAsImage"] td.mxPopupMenuItem[align="left"]:before{content:"\ee49";}
+.mxPopupMenu tr[item="duplicate"] td.mxPopupMenuItem[align="left"]:before{content:"\ecd2";}
+.mxPopupMenu tr[item="paste"] td.mxPopupMenuItem[align="left"]:before{content:"\eb91";}
+.mxPopupMenu tr[item="setAsDefaultStyle"] td.mxPopupMenuItem[align="left"]:before{content:"\ed8b";}
+.mxPopupMenu tr[item="toFront"] td.mxPopupMenuItem[align="left"]:before{content:"\eaf7";}
+.mxPopupMenu tr[item="toBack"] td.mxPopupMenuItem[align="left"]:before{content:"\f0db";}
+.mxPopupMenu tr[item="bringForward"] td.mxPopupMenuItem[align="left"]:before{content:"\eaf6";}
+.mxPopupMenu tr[item="sendBackward"] td.mxPopupMenuItem[align="left"]:before{content:"\f0d6";}
+
+.mxPopupMenu tr[item="clearWaypoints"] td.mxPopupMenuItem[align="left"]:before{content:"\ec2b";}
+.mxPopupMenu tr[item="editStyle"] td.mxPopupMenuItem[align="left"]:before{content:"\efc5";}
+.mxPopupMenu tr[item="editData"] td.mxPopupMenuItem[align="left"]:before{content:"\ec16";}
+.mxPopupMenu tr[item="editLink"] td.mxPopupMenuItem[align="left"]:before{content:"\eeb2";}
+.mxPopupMenu tr[item="addWaypoint"] td.mxPopupMenuItem[align="left"]:before{content:"\ef39";}
+.mxPopupMenu tr[item="insertHorizontalRule"] td.mxPopupMenuItem[align="left"]:before{content:"\f0a1";}
+
+.mxPopupMenu tr[item="line"] td.mxPopupMenuItem[align="left"]:before{content:"\ea6c";}
+.mxPopupMenu tr[item="findReplace"] td.mxPopupMenuItem[align="left"]:before{content:"\f0d1";}
+.mxPopupMenu tr[item="redo"] td.mxPopupMenuItem[align="left"]:before{content:"\ea5a";}
+.mxPopupMenu tr[item="edit"] td.mxPopupMenuItem[align="left"]:before{content:"\ec86";}
+.mxPopupMenu tr[item="editGeometry"] td.mxPopupMenuItem[align="left"]:before{content:"\efe2";}
+.mxPopupMenu tr[item="openLink"] td.mxPopupMenuItem[align="left"]:before{content:"\ecaf";}
+.mxPopupMenu tr[item="lockUnlock"] td.mxPopupMenuItem[align="left"]:before{content:"\ecf3";}
+
+.mxPopupMenu tr[item="theme"] td.mxPopupMenuItem[align="left"]:before{content:"\efc5";}
+.mxPopupMenu tr[item="editDiagram"] td.mxPopupMenuItem[align="left"]:before{content:"\efc0";}
+.mxPopupMenu tr[item="direction"] td.mxPopupMenuItem[align="left"]:before{content:"\eb93";}
+.mxPopupMenu tr[item="rotation"] td.mxPopupMenuItem[align="left"]:before{content:"\eb93";}
+.mxPopupMenu tr[item="configuration"] td.mxPopupMenuItem[align="left"]:before{content:"\f0e8";}
+.mxPopupMenu tr[item="tags"] td.mxPopupMenuItem[align="left"]:before{content:"\edfc";}
+.mxPopupMenu tr[item="turn"] td.mxPopupMenuItem[align="left"]:before{content:"\eb93";}
+
+.mxPopupMenu tr[item="align"] td.mxPopupMenuItem[align="left"]:before{content:"\ea27";}
+.mxPopupMenu tr[item="distribute"] td.mxPopupMenuItem[align="left"]:before{content:"\ea2a";}
+.mxPopupMenu tr[item="navigation"] td.mxPopupMenuItem[align="left"]:before{content:"\ee1d";}
+.mxPopupMenu tr[item="insert"] td.mxPopupMenuItem[align="left"]:before{content:"\ea12";}
+.mxPopupMenu tr[item="layout"] td.mxPopupMenuItem[align="left"]:before{content:"\ee81";}
+
+
+.mxPopupMenu tr[item="editTooltip"] td.mxPopupMenuItem[align="left"]:before{content:"\ec51";}
+.mxPopupMenu tr[item="publishLink"] td.mxPopupMenuItem[align="left"]:before{content:"\f0f4";}
+.mxPopupMenu tr[item="embedImage"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="embedIframe"] td.mxPopupMenuItem[align="left"]:before{content:"\ecd1";top: 2px;}
+.mxPopupMenu tr[item="embedSvg"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="exportPng"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="exportJpg"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="exportSvg"] td.mxPopupMenuItem[align="left"]:before{content:"\ee4b";top: 2px;}
+.mxPopupMenu tr[item="exportPdf"]{display: none;}
+.mxPopupMenu tr[item="exportVsdx"] td.mxPopupMenuItem[align="left"]:before{content:"\ecd7";top: 2px;}
+
+.mxPopupMenu tr[item="embedHtml"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="exportHtml"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="exportXml"] td.mxPopupMenuItem[align="left"]:before{content:"\ebad";top: 2px;}
+.mxPopupMenu tr[item="exportUrl"] td.mxPopupMenuItem[align="left"]:before{content:"\eeaf";top: 2px;}
+.mxPopupMenu tr[item="export"] td.mxPopupMenuItem[align="left"]:before{content:"\ed11";}
+.mxPopupMenu tr[item="image"] td.mxPopupMenuItem[align="left"]:before{content:"\ee4a";}
+.mxPopupMenu tr[item="flipH"] td.mxPopupMenuItem[align="left"]:before{content:"\ea61";}
+.mxPopupMenu tr[item="flipV"] td.mxPopupMenuItem[align="left"]:before{content:"\ea73";}
+
+.mxPopupMenu tr[item="keyboardShortcuts"] td.mxPopupMenuItem[align="left"]:before{content:"\ee75";}
+.mxPopupMenu tr[item="about"] td.mxPopupMenuItem[align="left"]:before{content:"\ee59";}
+.mxPopupMenu tr[item="autosize"] td.mxPopupMenuItem[align="left"]:before{content:"\ee60";}
+.mxPopupMenu tr[item="group"] td.mxPopupMenuItem[align="left"]:before{content:"\ed5a";}
+.mxPopupMenu tr[item="ungroup"] td.mxPopupMenuItem[align="left"]:before{content:"\ed74";}
+.mxPopupMenu tr[item="removeFromGroup"] td.mxPopupMenuItem[align="left"]:before{content:"\ed78";}
+
+.mxPopupMenu tr[item="toggleDarkMode"] td.mxPopupMenuItem[align="left"]:before{content:"\ef72";}
+.mxPopupMenu tr[item="fullscreen"] td.mxPopupMenuItem[align="left"]:before{content:"\ed9c";}
+.mxPopupMenu tr[item="zoomIn"] td.mxPopupMenuItem[align="left"]:before{content:"\f2db";}
+.mxPopupMenu tr[item="zoomOut"] td.mxPopupMenuItem[align="left"]:before{content:"\f2dd";}
+.mxPopupMenu tr[item="resetView"] td.mxPopupMenuItem[align="left"]:before{content:"\efc2";}
+
+.mxPopupMenu tr[item="view"] td.mxPopupMenuItem[align="left"]:before{content:"\f21a";}
+.mxPopupMenu tr[item="help"] td.mxPopupMenuItem[align="left"]:before{content:"\f045";}
+.mxPopupMenu tr[item="extras"] td.mxPopupMenuItem[align="left"]:before{content:"\ef20";}
+
+/*
+.mxPopupMenu tr[item="layers"] td.mxPopupMenuItem[align="left"]:before{content:"\f181";}
+.mxPopupMenu tr[item="formatPanel"] td.mxPopupMenuItem[align="left"]:before{content:"\ee9b";}
+.mxPopupMenu tr[item="outline"] td.mxPopupMenuItem[align="left"]:before{content:"\ee7c";}
+*/
+.mxPopupMenu tr[item="importText"] td.mxPopupMenuItem[align="left"]:before{content:"\f201";}
+.mxPopupMenu tr[item="mermaid"] td.mxPopupMenuItem[align="left"]:before{content:"\efb8";}
+.mxPopupMenu tr[item="formatSql"] td.mxPopupMenuItem[align="left"]:before,
+.mxPopupMenu tr[item="importCsv"] td.mxPopupMenuItem[align="left"]:before{content:"\eba8";top: 2px;}
+
+.mxPopupMenu tr[item="home"] td.mxPopupMenuItem[align="left"]:before{content:"\ee1d";}
+.mxPopupMenu tr[item="exitGroup"] td.mxPopupMenuItem[align="left"]:before{content:"\eeda";}
+.mxPopupMenu tr[item="enterGroup"] td.mxPopupMenuItem[align="left"]:before{content:"\eed4";}
+.mxPopupMenu tr[item="expand"] td.mxPopupMenuItem[align="left"]:before{content:"\ea0f";}
+.mxPopupMenu tr[item="collapse"] td.mxPopupMenuItem[align="left"]:before{content:"\eb84";}
+.mxPopupMenu tr[item="collapsible"] td.mxPopupMenuItem[align="left"]:before{content:"\eb7f";}
+
+.mxPopupMenu tr[item="insertRectangle"] td.mxPopupMenuItem[align="left"]:before{content:"\eb7f";}
+.mxPopupMenu tr[item="insertEllipse"] td.mxPopupMenuItem[align="left"]:before{content:"\eb7d";}
+.mxPopupMenu tr[item="insertRhombus"] td.mxPopupMenuItem[align="left"]:before{
+	content:"\eb7f";transform: rotateZ(45deg);
+}
+.mxPopupMenu tr[item="insertText"] td.mxPopupMenuItem[align="left"]:before{content:"\f201";}
+.mxPopupMenu tr[item="insertLink"] td.mxPopupMenuItem[align="left"]:before{content:"\eeaf";}
+.mxPopupMenu tr[item="createShape"] td.mxPopupMenuItem[align="left"]:before{content:"\f0f0";}
+.mxPopupMenu tr[item="toggleShapes"] td.mxPopupMenuItem[align="left"]:before{content:"\f0f0";}
+.mxPopupMenu tr[item="insertFreehand"] td.mxPopupMenuItem[align="left"]:before{content:"\ee49";}
+.mxPopupMenu tr[item="insertImage"] td.mxPopupMenuItem[align="left"]:before{content:"\ee47";}
+.mxPopupMenu tr[item="insertTemplate"] td.mxPopupMenuItem[align="left"]:before{content:"\f181";}
+.mxPopupMenu tr[item="insertLayout"] td.mxPopupMenuItem[align="left"]:before{content:"\ee81";}
+.mxPopupMenu tr[item="table"] td.mxPopupMenuItem[align="left"]:before{content:"\f1da";}
+.mxPopupMenu tr[item="insertAdvanced"] td.mxPopupMenuItem[align="left"]:before{content:"\ef78";}
+.mxPopupMenu tr[item="new"] td.mxPopupMenuItem[align="left"]:before{content:"\ecc9";}
+.mxPopupMenu tr[item="save"] td.mxPopupMenuItem[align="left"]:before{content:"\f0b1";}
+.mxPopupMenu tr[item="importFrom"] td.mxPopupMenuItem[align="left"]:before{content:"\ecc9";}
+.mxPopupMenu tr[item="openLibraryFrom"] td.mxPopupMenuItem[align="left"]:before{content:"\ed8a";}
+.mxPopupMenu tr[item="exportAs"] td.mxPopupMenuItem[align="left"]:before{content:"\ed11";}
+.mxPopupMenu tr[item="embed"] td.mxPopupMenuItem[align="left"]:before{content:"\eba7";}
+.mxPopupMenu tr[item="pageSetup"] td.mxPopupMenuItem[align="left"]:before{content:"\efbd";}
+.mxPopupMenu tr[item="print"] td.mxPopupMenuItem[align="left"]:before{content:"\ed07";}
+
+.mxPopupMenu tr[item="outline"] td.mxPopupMenuItem[align="left"]:before{content:"\ec62";}
+.mxPopupMenu tr[item="layers"] td.mxPopupMenuItem[align="left"]:before{content:"\f181";}
+.mxPopupMenu tr[item="language"] td.mxPopupMenuItem[align="left"]:before{content:"\edcf";}
+.mxPopupMenu tr[item="units"] td.mxPopupMenuItem[align="left"]:before{content:"\efe2";}
+
+.geButton .geSprite.geSprite-bold,
+.geButton .geSprite.geSprite-italic,
+.geButton .geSprite.geSprite-underline,
+.geButton .geSprite.geSprite-left,
+.geButton .geSprite.geSprite-dots,
+.geButton .geSprite.geSprite-code,
+.geButton .geSprite.geSprite-delete,
+.geButton .geSprite.geSprite-tofront,
+.geButton .geSprite.geSprite-toback,
+.geButton .geSprite.geSprite-fillcolor,
+.geButton .geSprite.geSprite-strokecolor,
+.geButton .geSprite.geSprite-plus,
+.geButton .geSprite.geSprite-zoomin,
+.geButton .geSprite.geSprite-zoomout,
+.geButton .geSprite.geSprite-redo,
+.geButton .geSprite.geSprite-undo{background:none;}
+
+.geButton .geSprite.geSprite-bold:after,
+.geButton .geSprite.geSprite-italic:after,
+.geButton .geSprite.geSprite-underline:after,
+.geButton .geSprite.geSprite-left:after,
+.geButton .geSprite.geSprite-dots:after,
+.geButton .geSprite.geSprite-code:after,
+.geButton .geSprite.geSprite-delete:after,
+.geButton .geSprite.geSprite-tofront:after,
+.geButton .geSprite.geSprite-toback:after,
+.geButton .geSprite.geSprite-fillcolor:after,
+.geButton .geSprite.geSprite-strokecolor:after,
+.geButton .geSprite.geSprite-plus:after,
+.geButton .geSprite.geSprite-zoomin:after,
+.geButton .geSprite.geSprite-zoomout:after,
+.geButton .geSprite.geSprite-redo:after,
+.geButton .geSprite.geSprite-undo:after{
+	position: absolute;top: 2px;left:1px;
+    font-family: 'remixicon';
+    font-size: 18px;color: #000;
+    width: 18px;height: 18px;line-height: 1em;
+    display: inline-block;position: relative;
+}
+.geButton .geSprite.geSprite-bold:after{content:"\ead1";font-weight: 800;}
+.geButton .geSprite.geSprite-italic:after{content:"\ee6b";}
+.geButton .geSprite.geSprite-underline:after{content:"\f244";}
+.geButton .geSprite.geSprite-left:after{content:"\ea27";}
+.geButton .geSprite.geSprite-dots:after{content:"\ef78";}
+.geButton .geSprite.geSprite-code:after{content:"\eba9";}
+.geButton .geSprite.geSprite-delete:after{content:"\ec23";}
+.geButton .geSprite.geSprite-tofront:after{content:"\eaf7";}
+.geButton .geSprite.geSprite-toback:after{content:"\f0db";}
+.geButton .geSprite.geSprite-fillcolor:after{content:"\efc2";}
+.geButton .geSprite.geSprite-strokecolor:after{content:"\ec80";}
+.geButton .geSprite.geSprite-plus:after{content:"\ea12";}
+.geButton .geSprite.geSprite-zoomin:after{content:"\f2db";}
+.geButton .geSprite.geSprite-zoomout:after{content:"\f2dd";}
+.geButton .geSprite.geSprite-redo:after{content:"\ea5a";}
+.geButton .geSprite.geSprite-undo:after{content:"\ea58";}
+
+
+.mxPopupMenu tr[item="editStyle"]{display: none;}
+
+
+.file-title{position:absolute;right:100px;width:30%;text-align:center;line-height:30px;color:#888;left:35%;top:0;}
+.file-title.true-file i{display:inline-block;}
+.file-title i{
+	cursor: pointer;margin-left: 5px;padding:5px;line-height: 12px;
+	position: relative;top:2px;display:none;
+	background: #999;border-radius: 3px;
+	background: rgba(100,100,100,0.1);
+}
+.file-title i:hover{background: rgba(100,100,100,0.3);}
+@media (max-width:800px){.file-title{display:none;}}

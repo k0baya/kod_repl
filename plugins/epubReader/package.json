@@ -1,0 +1,53 @@
+{
+	"id":"epubReader",
+	"name":"{{LNG['epubReader.meta.title']}}",
+	"title":"",
+	"version":"1.36",
+	"source":{
+		"icon":"{{pluginHost}}static/app/images/icon.png",
+		"screenshoot":[
+			"{{pluginHost}}static/app/images/screenshot1.png",
+			"{{pluginHost}}static/app/images/screenshot2.png"
+		]
+	},
+	"category":"tools,file",
+	"description":"{{LNG['epubReader.meta.desc']}}",
+	"keywords":"",
+	"auther":{
+		"copyright":"kodcloud.",
+		"homePage":"http://www.kodcloud.com",
+	},
+	"configItem":{
+		"pluginAuth":{
+			"type":"userSelect",
+			"value":{"all":1},
+			"display":"{{LNG['admin.plugin.auth']}}",
+			"desc":"{{LNG['admin.plugin.authDesc']}}",
+			"require":1
+		},
+		"openWith":{
+			"type":"radio",
+			"value":"dialog",
+			"display":"{{LNG['admin.plugin.openWith']}}",
+			"info":{
+				"dialog":"{{LNG['admin.plugin.openWithDilog']}}",
+				"window":"{{LNG['admin.plugin.openWithWindow']}}"
+			}
+		},
+		"sep1001":"<hr/>",
+		"fileExt":{
+			"type":"tags",
+			"display":"{{LNG['admin.plugin.fileExt']}}",
+			"desc":"{{LNG['admin.plugin.fileExtDesc']}}",
+			"value":"epub",
+		},
+		"fileSort":{
+			"type":"number",
+			"display":"{{LNG['admin.plugin.fileSort']}}",
+			"desc":"{{LNG['admin.plugin.fileSortDesc']}}",
+			"value":100,
+		}
+	}
+}
+
+

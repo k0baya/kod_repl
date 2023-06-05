@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="auth" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+        <title>OneDrive授权</title>
+        <style>
+            #app{
+                height: 100%;
+                display:-webkit-flex;
+                justify-content:center;
+                align-items:center;
+            }
+            .bd-auth-box{
+                text-align: center; 
+                /* margin-top: 100px; */
+                margin-top: 120px;
+            }
+            .bd-auth-box .icon{
+                color: #fff;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 30px;
+                display: inline-block;
+                border-radius: 100%;
+            }
+            .bd-auth-box .title{
+                color:#949494;
+                font-size: 16px;
+            }
+            .bd-auth-box .msg{
+                margin-top: 10px;
+                font-size: 14px;
+                color: #bbb;
+            }
+            .hidden{display: none;}
+        </style>
+    </head>
+    
+    <body>
+        <div class="bd-auth-box">
+            <div class="icon hidden"></div>
+            <p class="title hidden"></p>
+            <p class="msg hidden"></p>
+        </div>
+        <script>
+            (function(){
+                var $cls = function(dom) {
+                    // return document.getElementsByClassName(dom)[0];
+                    return document.querySelector('.'+dom);
+                }
+                // 获取当前url参数
+                var getUrlParams = function () {
+                    var data = {};
+                    var query = window.location.search.substring(1).split('&');	// 先解码导致data参数（{}）异常
+                    for(var i in query) {
+                        var item = query[i];
+                        var idx = item.indexOf('=');
+                        if (idx > 0) {
+                            var key	  = item.slice(0, idx);
+                            var value = item.slice(idx + 1);
+                            data[key] = decodeURIComponent(value);
+                        }
+                    }
+                    return data;
+                }
+                // 渲染页面
+                var initView = function(query){
+                    var data = {
+                        'icon': '✕',
+                        'title': '授权失败',
+                        'msg': query.data,
+                    };
+                    if(query.code != '0') {
+                        data.icon = '✓';
+                        data.title = '授权成功';
+                        data.msg = '<span class="ns">3</span>秒后自动关闭';
+                    }
+                    for(var key in data) {
+                        $cls(key).innerHTML = data[key];
+                        $cls(key).classList.remove("hidden");
+                    }
+                    $cls('icon').style.background = query.code != '0' ? '#57c22d' : '#f5222d';
+                }
+                var query = getUrlParams();
+                if(!query || !query.data || !window.opener) {
+                    query = {code: '0', data: '非法请求'};
+                }else{
+                    if(query.code != '0') {
+                        try {
+                            query.data = JSON.parse(query.data);
+                        } catch (err) {
+                            console.log(err, query.data);
+                            query = {code: '0', data: '解析错误！'};
+                        }
+                    }
+                }
+                initView(query);
+                if(!window.opener) return false;
+
+                var $box = window.opener.document.querySelector(".store-dtl-box");
+                if(query.code == '0') {
+                    // 授权失败，关闭授权开关
+                    // var $auth = $box.querySelector("input[name='auth']").click();
+                    var $auth = $box.querySelector("input[name='auth']").checked = false;
+                    return false;
+                }
+                // 给form赋值，3秒后自动关闭
+                for(var key in query.data) {
+                    var $input = $box.querySelector("input[name='"+key+"']");
+                    if($input) $input.value = query.data[key];
+                }
+                var count = 3;
+                var timer = null;
+                timer = setInterval(function () {
+                    if (count > 0) {
+                        count = count - 1;
+                        $cls('ns').innerText = count;
+                    } else {
+                        window.opener = null;
+                        window.open('', '_self').close();
+                    }
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>

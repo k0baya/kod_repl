@@ -1,0 +1,40 @@
+{
+	"id":"googleDocs",
+	"name":"{{LNG['googleDocs.meta.name']}}",
+	"title":"{{LNG['googleDocs.meta.title']}}",
+	"version":"1.43",
+	"category":"file",
+	"source":{
+		"icon":"{{pluginHost}}static/images/icon.png"
+	},
+	"description":"{{LNG['googleDocs.meta.desc']}}",
+	"auther":{
+		"copyright":"kodcloud",
+		"homePage":"http://kodcloud.com"
+	},
+	"meta":{
+		"needNetwork": 1
+	},
+	"networkDesc": "{{LNG['googleDocs.meta.netwrokDesc']}}<br/>{{LNG['googleDocs.meta.netwrokUrl']}}: <span class='blue-6'>https://docs.google.com</span>",
+	"configItem":{
+		"pluginAuth":{
+			"type":"userSelect",
+			"value":{"all":1},
+			"display":"{{LNG['admin.plugin.auth']}}",
+			"desc":"{{LNG['admin.plugin.authDesc']}}",
+			"require":1
+		},
+		"fileExt":{
+			"type":"tags",
+			"display":"{{LNG['admin.plugin.fileExt']}}",
+			"desc":"{{LNG['admin.plugin.fileExtDesc']}}",
+			"value":"doc,docx,rtf,xls,xlsx,wps,ppt,pptx,pps,.odt,ods,odp,ott,ots,otp,dxf,ps,eps,xps,psd,tif,tiff,bmp,svg,pages,ai,ttf",
+		},
+		"fileSort":{
+			"type":"number",
+			"display":"{{LNG['admin.plugin.fileSort']}}",
+			"desc":"{{LNG['admin.plugin.fileSortDesc']}}",
+			"value":-1,
+		}
+	}
+}
